@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand navbar-light bg-light">
+    <div class="nav navbar-nav">
+        <a class="nav-item nav-link active" href="#">Sistema</a>
+        <div *ngIf="ban==true; then mostrar "></div>
+        <ng-template #mostrar>
+
+        <a class="nav-item nav-link" routerLink="/listar-empleado">Listar empleado</a>
+        <a class="nav-item nav-link" routerLink="/agregar-empleado">Agregar empleado</a>
+        <!--<a class="nav-item nav-link" routerLink="/subir-imagen">Subir imagen</a>
+        <a class="nav-item nav-link" routerLink="/tomarimagenes">Ver imagen</a>-->
+        <a class="nav-item nav-link btn btn-success" (click)="cerrarSesion()" ><strong>Cerrar Sesion</strong></a>
+        </ng-template>
+    </div>
+</nav>
+
+<div class="container">
+  
+  <!--Espacio donde se mostrara lo que trae cada routerLink, sin esto no se mostraria nada-->
+  <router-outlet></router-outlet>
+</div>

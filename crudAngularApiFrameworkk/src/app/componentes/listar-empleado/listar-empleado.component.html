@@ -1,0 +1,49 @@
+<div class="row">
+
+<div class="col">
+<div class="card">
+    <div class="card-header">
+        Empleados
+    </div>
+    <div class="card-body">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Edad</th>
+                    <th>Token</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody  >
+                <tr *ngFor="let it of lista; let iControl=index">
+                    <td >{{it.id}}</td>
+                    <td>{{it.nombre}}</td>
+                    <td>{{it.edad}}</td>
+                    <td>{{it.token}}</td>
+                    <td>
+                        <a routerLink="/editar-empleado/{{it.id}}" class="btn btn-primary ">Editar</a>
+                        
+                        <a routerLink="/eliminar-empleado" class="btn  btn-danger" (click)="eliminarPersona(it.id,iControl)">Eliminar</a>
+                    </td>
+                </tr>
+                
+            </tbody>
+        </table>
+    </div>
+     
+</div>
+</div>
+<div class="col">
+    <app-agregar-empleado></app-agregar-empleado>
+    
+</div>
+<div>
+    <div>
+        <button class="btn btn-primary" (click)="verificar()">Verificar token</button>
+    
+        <h4>Verificacion del token {{ban}} </h4>
+    </div>
+</div>
+</div>

@@ -1,0 +1,16 @@
+ 
+<div class="mx-auto"  style="width: 200px;">
+    <form [formGroup]="formulario" (submit)="recibir()">
+    <h1>Login</h1>
+   <input type="text" placeholder="Nombre" formControlName="nombre">
+   <button [disabled]="formulario.invalid" type="submit">Enviar</button>
+    </form>
+</div>
+
+
+
+<div>
+    <button (click)="verificar()">Verificar</button>
+
+    <h4>Verificacion del token {{tok}}</h4>
+</div>

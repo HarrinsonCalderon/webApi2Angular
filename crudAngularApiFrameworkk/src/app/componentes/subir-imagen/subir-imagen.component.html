@@ -1,0 +1,20 @@
+<div>
+    <input type="file" (change)="capturarArchivo($event)">
+
+</div>
+<div *ngIf="previsualizacion">
+    Visualizacion de la imagen
+    <img [src]="previsualizacion" width="100px" >
+</div>
+
+<button class="btn btn-primary" (click)="subir()">Subir archivo</button>
+
+
+
+<ul *ngFor="let it of imagenes">
+     
+    <li>{{it.imagen}}</li>
+    <img [src]="it" width="100px">
+</ul>
+
+<button (click)="pruebas()">Pruebas</button>

@@ -1,0 +1,37 @@
+<div class="card">
+    <div class="card-header">
+        Agregar Persona
+    </div>
+    <div class="card-body">
+        <form  [formGroup]="formulario" (submit)="enviarDatos()">
+            <div class="form-group">
+             <div class="mb-3">
+              <label for="nombre">Nombre:</label>
+              <input type="text"
+                  class="form-control form-control-sm" name="nombre" id="nombre" aria-describedby="helpId" placeholder="Escribe tu nombre" formControlName="nombre">  
+                  <!--Inicio errores-->
+                  <span *ngIf="this.formulario.get('nombre')?.errors?.['required']">
+                    (El nombre no puede quedar vacío)
+                  </span>
+                  <span *ngIf="this.formulario.get('nombre')?.errors?.['minlength']">
+                    (Debe tener como mínimo 3 caracteres)
+                  </span>
+                  <!--Fin errores-->
+              </div>
+              <div class="mb-3">
+                <label for="edad">Edad:</label>
+                <input type="number"
+                    class="form-control form-control-sm" name="edad" id="edad" aria-describedby="helpId" placeholder="Escribe tu nombre" formControlName="edad">  
+                </div>
+                <div class="btn-group" role="group" aria-label="">
+                    <button type="submit" class="btn btn-success " [disabled]="formulario.invalid" >Agregar</button>
+
+                    <button type="button" class="btn btn-primary" >Cancelar</button>
+                    
+                </div>
+            </div>
+
+        </form>
+    </div>
+     
+</div>
